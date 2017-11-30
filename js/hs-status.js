@@ -4,8 +4,8 @@
                         if ( count != 0 ) {
                                 result = ' i przebywa w nim '
                                 if (count == 1) { result += '1 osoba'; }
-                                if (count >= 2 && count <= 4) { result += '' + str(count) + ' osoby'; }
-                                if (count >= 5 ) { result += '' + str(count) + ' osób'; }
+                                if (count >= 2 && count <= 4) { result += '' + count + ' osoby'; }
+                                if (count >= 5 ) { result += '' + count + ' osób'; }
                         }
                         return result;
                 }
@@ -29,16 +29,18 @@
                                                 peopleList = ': ' + people.join(', ');
 
                                         }
-                                        else {peopleList = '';}
+                                        else {
+						peopleList = '';
+		                                textStatus += '.';
+					}
                                 }
                                 else {
-                                        textStatus += 'zamknięty';
+                                        textStatus += 'zamknięty.';
                                         statusTooltip.removeClass('hs-open');
                                         statusTooltip.addClass('hs-closed');
                                         statusLiText.html('HS zamkniety');
                                         peopleList = '';
                                 }
-                                textStatus += '.';
                                 statusTooltip.attr('data-original-title', textStatus + peopleList).tooltip('fixTitle');
                         }
                 );
