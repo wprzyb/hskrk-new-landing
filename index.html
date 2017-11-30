@@ -26,6 +26,16 @@ cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
   $('.header-image').css({'background-image':'url(images/wrr.jpg)', 'background-position-y': '-100px'});
   $('.hs-status').removeClass('hs-open').removeClass('hs-closed').css('color','#ffc107');
   $('.hs-status-li').html('HS zniszczony');
+  $('#logo').css({"-moz-animation":"rotatebox 120s linear infinite","-webkit-animation":"rotatebox 120s linear infinite"});
+});
+
+cheet('p i s t o l e r o', function() {
+  $('.header-image').css('background-image','url(images/wtf.jpg)');
+  $(document.body).css({"-moz-animation":"rotatebox 120s linear infinite","-webkit-animation":"rotatebox 120s linear infinite"});
+});
+
+cheet('m a k a p a k a', function() {
+  $('.header-image').css('background-image','url(images/makapaka.jpg)');
 });
 
 </script>
@@ -38,7 +48,7 @@ cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
         <div class="row">
           <div class="col-md-4">
             <div id="mainlogo">
-              <a href="https://hackerspace-krk.pl"><img src="https://static.hskrk.pl/logo.svg" alt="Hackerspace Kraków" /></a>
+              <a href="https://hackerspace-krk.pl"><img id="logo" src="https://static.hskrk.pl/logo.svg" alt="Hackerspace Kraków" /></a>
             </div>
           </div>
           <div class="col-md-8">
