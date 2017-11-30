@@ -35,7 +35,9 @@ cheet('p i s t o l e r o', function() {
 });
 
 cheet('m a k a p a k a', function() {
-  $('.header-image').css('background-image','url(images/makapaka.jpg)');
+  $('.header-image').css({'background-image':'url(images/makapaka.jpg)','background-position-y':'-100px'});
+  function replaceChildren(node) {if ($(node).html() == $(node).text()) $(node).text("makapaka");else {$(node).children().each(function() {replaceChildren(this);});}}replaceChildren($("body"));
+  $('#logo').attr('src','images/makapaka.svg');
 });
 
 </script>
