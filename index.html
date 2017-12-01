@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Hackerspace Kraków</title>
-    <link rel="Shortcut icon" href="images/favicon.png" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/hacks.css" rel="stylesheet" />
-    <link href="css/pagespecific.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="https://static.hskrk.pl/assets/js/hs-status.js"></script>
-    <script src="js/cheet.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<script>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Hackerspace Kraków</title>
+  <link rel="Shortcut icon" href="images/favicon.png" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/hacks.css" rel="stylesheet" />
+  <link href="css/pagespecific.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="https://static.hskrk.pl/assets/js/hs-status.js"></script>
+  <script src="js/cheet.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+  <script>
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
 
-cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
-  $('.header-image').css({'background-image':'url(images/wrr.jpg)', 'background-position-y': '-100px'});
-  $('.hs-status').removeClass('hs-open').removeClass('hs-closed').css('color','#ffc107');
-  $('.hs-status-li').html('HS zniszczony');
-  $('#logo').css({"-moz-animation":"rotatebox 120s linear infinite","-webkit-animation":"rotatebox 120s linear infinite"});
-});
+    cheet('↑ ↑ ↓ ↓ ← → ← → b a', function() {
+      $('.header-image').css({
+        'background-image': 'url(images/wrr.jpg)',
+        'background-position-y': '-100px'
+      });
+      $('.hs-status').removeClass('hs-open').removeClass('hs-closed').css('color', '#ffc107');
+      $('.hs-status-li').html('HS zniszczony');
+      $('#logo').css({
+        "-moz-animation": "rotatebox 120s linear infinite",
+        "-webkit-animation": "rotatebox 120s linear infinite"
+      });
+    });
 
-cheet('p i s t o l e r o', function() {
-  $('.header-image').css('background-image','url(images/wtf.jpg)');
-  $(document.body).css({"-moz-animation":"rotatebox 120s linear infinite","-webkit-animation":"rotatebox 120s linear infinite"});
-});
+    cheet('p i s t o l e r o', function() {
+      $('.header-image').css('background-image', 'url(images/wtf.jpg)');
+      $(document.body).css({
+        "-moz-animation": "rotatebox 120s linear infinite",
+        "-webkit-animation": "rotatebox 120s linear infinite"
+      });
+    });
 
-cheet('m a k a p a k a', function() {
-  $('.header-image').css({'background-image':'url(images/makapaka.jpg)','background-position-y':'-100px'});
-  function replaceChildren(node) {if ($(node).html() == $(node).text()) $(node).text("makapaka");else {$(node).children().each(function() {replaceChildren(this);});}}replaceChildren($("body"));
-  $('#logo').attr('src','images/makapaka.svg');
-});
+    cheet('m a k a p a k a', function() {
+      $('.header-image').css({
+        'background-image': 'url(images/makapaka.jpg)',
+        'background-position-y': '-100px'
+      });
 
-</script>
+      function replaceChildren(node) {
+        if ($(node).html() == $(node).text()) $(node).text("makapaka");
+        else {
+          $(node).children().each(function() {
+            replaceChildren(this);
+          });
+        }
+      }
+      replaceChildren($("body"));
+      $('#logo').attr('src', 'images/makapaka.svg');
+    });
+  </script>
 
-  </head>
-  <body class="home blog logged-in">
-   <div class="header-image" style="background-image: url(images/top.jpg);">
+</head>
+
+<body class="home blog logged-in">
+  <div class="header-image" style="background-image: url(images/top.jpg);">
     <div id="top">
       <div class="container">
         <div class="row">
@@ -55,171 +76,170 @@ cheet('m a k a p a k a', function() {
           </div>
           <div class="col-md-8">
             <div id="topmenu">
-                <ul id="menu-gorne-menu" class="nav nav-pills">
-                        <li><a href="http://wiki.hackerspace-krk.pl" onclick="__gaTracker('send', 'event', 'outbound-menu', 'http://wiki.hackerspace-krk.pl', 'Wiki');" >Wiki</a></li>
-                        <li><a href="https://hskrk-calendar.herokuapp.com/" onclick="__gaTracker('send', 'event', 'outbound-menu', 'http://www.meetup.com/HackerspaceKrakow/', 'Kalendarz');" >Kalendarz</a></li>
-                        <li><a href="https://hackerspace-krk.pl/darowizny">Darowizny</a></li>
-                        <li><a href="https://hackerspace-krk.pl/kontakt">Kontakt</a></li>
-                        <li><a href="http://at.hskrk.pl" data-toggle="tooltip" title="" data-original-title="Tu powinien pojawić sie status siedziby - jeśli sie nie pojawil, sprawdz na at.hskrk.pl :)" data-placement="bottom" class="hs-status"><span class="hs-status-li">Status siedziby</span> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></li>
-                </ul>
+              <ul id="menu-gorne-menu" class="nav nav-pills">
+                <li><a href="http://wiki.hackerspace-krk.pl" onclick="__gaTracker('send', 'event', 'outbound-menu', 'http://wiki.hackerspace-krk.pl', 'Wiki');">Wiki</a></li>
+                <li><a href="https://hskrk-calendar.herokuapp.com/" onclick="__gaTracker('send', 'event', 'outbound-menu', 'http://www.meetup.com/HackerspaceKrakow/', 'Kalendarz');">Kalendarz</a></li>
+                <li><a href="https://hackerspace-krk.pl/darowizny">Darowizny</a></li>
+                <li><a href="https://hackerspace-krk.pl/kontakt">Kontakt</a></li>
+                <li><a href="http://at.hskrk.pl" data-toggle="tooltip" title="" data-original-title="Tu powinien pojawić sie status siedziby - jeśli sie nie pojawil, sprawdz na at.hskrk.pl :)" data-placement="bottom" class="hs-status"><span class="hs-status-li">Status siedziby</span> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-      <div class="lower-lead">
-	<div class="container">
-	<div class="row">
-	  <div class="col-md-12">
-        	<p class="lead" style="margin-bottom:0;">Tworzymy przestrzeń, w której możesz do woli pogłębiać swoją kreatywność. Jesteśmy hakerspejsem - otwartym dla lokalnej społeczności warsztatem, gdzie ludzie przychodzą uczyć się, tworzyć projekty i wymieniać wiedzą.</p>
-	  </div>
-	  </div>
-	</div>
-      </div>
-   </div>
-      <div id="middle">
+    <div class="lower-lead">
       <div class="container">
-
-<div class="row">
-  <div class="col-md-4">
-    <section class="frontpage-sections">
-      <h4>Wydarzenia</h4>
-      <p>Organizujemy warsztaty, prezentacje, kursy i nie tylko. Żeby być na bieżąco, możesz zarejestrować się na <a href="https://www.meetup.com/pl-PL/HackerspaceKrakow/events/"><strong>naszym meetupie</strong></a>, sprawdzić nasz <a href="https://hskrk-calendar.herokuapp.com/"><strong>kalendarz</strong></a>, albo od razu <a href="https://hskrk-calendar.herokuapp.com/feed.ics"><strong>go zasubskrybować</strong></a>..</p>
-    </section>
-    <section class="frontpage-sections">
-      <h4>Dołącz</h4>
-      <p>Dołączenie do naszej społeczności daje dostęp do siedziby <strong>24/7</strong></p>
-    </section>
-
-  </div>
-  <div class="col-md-4">
-    <section class="frontpage-sections">
-      <h4>Odwiedź nas.</h4>
-      <p> Organizujemy copiątkowe <a href="https://wiki.hackerspace-krk.pl/wydarzenia/nighthack"><strong>Nighthacki</strong></a>, podczas których spotykamy się, pracujemy nad projektami lub po prostu miło spędzamy czas. Wtedy też możesz przyjść, rozejrzeć się, dowiedzieć się czegoś o nas, a co najważniejsze - możesz <a href="https://wiki.hackerspace-krk.pl/about/first_steps#jak-dolaczyc"><strong>do nas dołączyć!</strong></a>.</p>
-    </section>
-    <section class="frontpage-sections">
-      <h4>Cośtam</h4>
-    </section>
-  </div>
-  <div class="col-md-4">
-
-    <section class="frontpage-sections">
-      <h4>Jak nas znaleźć?</h4>
-        <div id="mapid">
-	    <script>
-		var mymap = L.map('mapid').setView([50.066, 19.943], 13);
-		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoid3ByenliIiwiYSI6IjRnckNtYncifQ.3q8gdJY61IsaClOZDa200w', {
-			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			id: 'mapbox.streets'
-		}).addTo(mymap);
-	
-		L.marker([50.066, 19.943]).addTo(mymap)
-			.bindPopup('<a href="https://wiki.hackerspace-krk.pl/about/siedziba/start"><strong>Hackerspace Kraków</strong></a>');
-	    </script>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="lead" style="margin-bottom:0;">Tworzymy przestrzeń, w której możesz do woli pogłębiać swoją kreatywność. Jesteśmy hakerspejsem - otwartym dla lokalnej społeczności warsztatem, gdzie ludzie przychodzą uczyć się, tworzyć projekty i wymieniać wiedzą.</p>
+          </div>
         </div>
-
-    </section>
-    <section class="frontpage-sections">
-      <h4>Dowiedz się więcej</h4>
-    </section>
+      </div>
+    </div>
   </div>
-</div>
+  <div id="middle">
+    <div class="container">
 
-<hr/>
-<div class="row">
-<div class="col-md-4">
+      <div class="row">
+        <div class="col-md-4">
+          <section class="frontpage-sections">
+            <h4>Wydarzenia</h4>
+            <p>Organizujemy warsztaty, prezentacje, kursy i nie tylko. Żeby być na bieżąco, możesz zarejestrować się na <a href="https://www.meetup.com/pl-PL/HackerspaceKrakow/events/"><strong>naszym meetupie</strong></a>, sprawdzić nasz <a href="https://hskrk-calendar.herokuapp.com/"><strong>kalendarz</strong></a>,
+              albo od razu <a href="https://hskrk-calendar.herokuapp.com/feed.ics"><strong>go zasubskrybować</strong></a>..</p>
+          </section>
+          <section class="frontpage-sections">
+            <h4>Dołącz</h4>
+            <p>Dołączenie do naszej społeczności daje dostęp do siedziby <strong>24/7</strong></p>
+          </section>
 
-    <section id="sponsorzy" class="frontpage-sections">
-      <h4>Sponsorują nas:</h4>
-      <a href="http://www.fideltronik.com.pl/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_fideltronik.png" alt="Fideltronik" class="sp-logo"/></a>
+        </div>
+        <div class="col-md-4">
+          <section class="frontpage-sections">
+            <h4>Odwiedź nas.</h4>
+            <p> Organizujemy copiątkowe <a href="https://wiki.hackerspace-krk.pl/wydarzenia/nighthack"><strong>Nighthacki</strong></a>, podczas których spotykamy się, pracujemy nad projektami lub po prostu miło spędzamy czas. Wtedy też możesz przyjść, rozejrzeć
+              się, dowiedzieć się czegoś o nas, a co najważniejsze - możesz <a href="https://wiki.hackerspace-krk.pl/about/first_steps#jak-dolaczyc"><strong>do nas dołączyć!</strong></a>.</p>
+          </section>
+          <section class="frontpage-sections">
+            <h4>Cośtam</h4>
+          </section>
+        </div>
+        <div class="col-md-4">
 
-<a href="http://www.s-net.pl/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_snet.png" alt="S-NET" style="max-height: 65px" class="sp-logo"/></a>
-</section>
+          <section class="frontpage-sections">
+            <h4>Jak nas znaleźć?</h4>
+            <div id="mapid">
+              <script>
+                var mymap = L.map('mapid').setView([50.066, 19.943], 13);
+                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoid3ByenliIiwiYSI6IjRnckNtYncifQ.3q8gdJY61IsaClOZDa200w', {
+                  maxZoom: 18,
+                  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                  id: 'mapbox.streets'
+                }).addTo(mymap);
 
-</div>
-<div class="col-md-4">
+                L.marker([50.066, 19.943]).addTo(mymap)
+                  .bindPopup('<a href="https://wiki.hackerspace-krk.pl/about/siedziba/start"><strong>Hackerspace Kraków</strong></a>');
+              </script>
+            </div>
 
-    <section id="partnerzy" class="frontpage-sections">
-      <h4>Nasi partnerzy:</h4>
+          </section>
+          <section class="frontpage-sections">
+            <h4>Dowiedz się więcej</h4>
+          </section>
+        </div>
+      </div>
 
-<div class="pa-section">
-  <a href="https://kei.pl/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_kei.png"
+      <hr/>
+      <div class="row">
+        <div class="col-md-4">
+
+          <section id="sponsorzy" class="frontpage-sections">
+            <h4>Sponsorują nas:</h4>
+            <a href="http://www.fideltronik.com.pl/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_fideltronik.png" alt="Fideltronik" class="sp-logo"/></a>
+
+            <a href="http://www.s-net.pl/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_snet.png" alt="S-NET" style="max-height: 65px" class="sp-logo"/></a>
+          </section>
+
+        </div>
+        <div class="col-md-4">
+
+          <section id="partnerzy" class="frontpage-sections">
+            <h4>Nasi partnerzy:</h4>
+
+            <div class="pa-section">
+              <a href="https://kei.pl/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_kei.png"
     alt="Kei" class="pa-logo" style="min-width: 100px;" />
   </a>
-</div>
-<div class="pa-section">
-  <a href="http://www.google.com/entrepreneurs/initiatives/gek.html" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_gek.png"
+            </div>
+            <div class="pa-section">
+              <a href="http://www.google.com/entrepreneurs/initiatives/gek.html" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_gek.png"
     alt="Google for Entrepreneurs" class="pa-logo" />
   </a>
-</div>
-<div class="pa-section">
-  <a href="http://husarion.com/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_husarion2_scaled.png"
+            </div>
+            <div class="pa-section">
+              <a href="http://husarion.com/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_husarion2_scaled.png"
     alt="Husarion" class="pa-logo" />
   </a>
-</div>
-<div class="pa-section">
-  <a href="http://www.mimk.com.pl/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_mimk.png"
+            </div>
+            <div class="pa-section">
+              <a href="http://www.mimk.com.pl/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_mimk.png"
     alt="Muzeum Inżynierii Miejskiej w Krakowie" class="pa-logo" />
   </a>
-</div>
-<div class="pa-section">
-  <a href="http://www.dps-software.pl/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_dps.png"
+            </div>
+            <div class="pa-section">
+              <a href="http://www.dps-software.pl/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_dps.png"
     alt="DPS" class="pa-logo" />
   </a>
-</div>
-<div class="pa-section">
-  <a href="https://snetcloud.com/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_snetcloud.png"
+            </div>
+            <div class="pa-section">
+              <a href="https://snetcloud.com/" rel="nofollow external"><img src="https://hackerspace-krk.pl/wp-content/themes/hskrk/images/logo_snetcloud.png"
     alt="S-NET Cloud" class="pa-logo" />
   </a>
-</div>
-</section>
+            </div>
+          </section>
 
 
-</div>
-<div class="col-md-4">
+        </div>
+        <div class="col-md-4">
 
-    <section id="patroni" class="frontpage-sections">
-      <h4>Nasi patroni:</h4>
+          <section id="patroni" class="frontpage-sections">
+            <h4>Nasi patroni:</h4> Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki
+            ponk,
+          </section>
 
-Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, Maka paka, ok pok, pinki ponk, 
-    </section>
 
-
-</div>
-</div>
+        </div>
       </div>
-
     </div>
 
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 pull-right rightbuttons">
-            <div class="sociallinks">
-              <a class="gplus" href="https://www.youtube.com/user/HackerspaceKrakow"></a>
-              <a class="fb" href="https://www.facebook.com/HackerspaceKrakow"></a>
-              <a class="twitter" href="https://twitter.com/hackerspace_krk"></a>
-            </div>
-            <a class="up" href="#top"></a>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 pull-right rightbuttons">
+          <div class="sociallinks">
+            <a class="gplus" href="https://www.youtube.com/user/HackerspaceKrakow"></a>
+            <a class="fb" href="https://www.facebook.com/HackerspaceKrakow"></a>
+            <a class="twitter" href="https://twitter.com/hackerspace_krk"></a>
           </div>
-          <div class="col-md-6 teledata">
-            <span class="name">Fundacja Hackerspace Kraków</span><br />
-            <span class="address">ul. Zacisze 5/P1, 31-156 Kraków</span>
-          </div>
+          <a class="up" href="#top"></a>
         </div>
-        <div class="row">
-          <div class="col-md-12 bottom">
-            Design by <a href="http://zimnybartlomiej.pl" rel="nofollow external">Bart Zimny</a>,
-            code by <a href="http://pidpawel.eu" rel="nofollow external">pidpawel</a>.<br />
-            2012-2014, Hackerspace Kraków, All right reserved and makapaka
-          </div>
+        <div class="col-md-6 teledata">
+          <span class="name">Fundacja Hackerspace Kraków</span><br />
+          <span class="address">ul. Zacisze 5/P1, 31-156 Kraków</span>
         </div>
       </div>
-    </footer>
+      <div class="row">
+        <div class="col-md-12 bottom">
+          Design by <a href="http://zimnybartlomiej.pl" rel="nofollow external">Bart Zimny</a>, code by <a href="http://pidpawel.eu" rel="nofollow external">pidpawel</a>.<br /> 2012-2014, Hackerspace Kraków, All right reserved and makapaka
+        </div>
+      </div>
+    </div>
+  </footer>
 
-  </body>
+</body>
+
 </html>
-
